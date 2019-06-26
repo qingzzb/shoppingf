@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <!-- <classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" /> -->
+
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://127.0.0.1/shopping"
+        userId="root"
+        password="a">
+    </jdbcConnection>
+
+    <!-- 实体类的存放包路径 -->
+    <javaModelGenerator targetPackage="com.yc.shopping.bean" targetProject="src/main/java">
+    </javaModelGenerator>
+
+    <!-- xml映射文件的存放包路径 -->
+    <sqlMapGenerator targetPackage="com.yc.shopping.dao"  targetProject="src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <!-- dao接口的存放包路径 -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.yc.shopping.dao"  targetProject="src/main/java">
+    </javaClientGenerator>
+
+    <table  tableName="user"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+   
+    <table  tableName="address"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+    
+    <table  tableName="cart"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+    
+    <table  tableName="collect"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+    
+    <table  tableName="commodity_basic"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+    
+    <table  tableName="commodity_command"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+    
+    <table  tableName="commodity_detail"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+    
+    <table  tableName="commodity_record"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+    
+    <table  tableName="feedback"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+    
+    <table  tableName="order"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+    
+    <table  tableName="shop"  >
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />  
+    </table>
+
+  </context>
+</generatorConfiguration>
